@@ -1,0 +1,37 @@
+body{
+	display: flex;
+	flex-direction: row;
+}
+div{
+	text-align: center;
+}
+.round{
+	height: 300px;
+	width: 150px;
+	border: 1px solid black;
+}
+.un{
+	height: 100px;
+	background-color: yellow;
+}
+.deux{
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+}
+.trois{
+	height: 100px;
+	background-color: green;
+}
+.deuxUn{
+	width: 75px;
+	height: 100px;
+	background-color: lightblue;
+}
+.deuxDeux{
+	width: 75px;
+	height: 100px;
+	background-color: darkblue;
+}
+.chiffre{
+}

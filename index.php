@@ -5,9 +5,11 @@
     $gg = 10; // Variable innutile
     $premiere_boule; // Indiquera par la suite le score du lancé actuel
     $bonus = 0;
-
+        echo '<head><link rel="stylesheet" href="bowling.css"></head>';
+        echo '<div id="contenaire">';
 //////////////  DEBUT DU ROUND /////////////////////////////
     while($round <= 10){                                       ////// Tant que le 10eme round n'est pas terminé : 
+        echo '<div id="round">';
         echo '<p style="color:red;font-size:20px">Round N°'.$round.' : </p>'; // Indique à quel round nous sommes
         $premiere_boule = rand(0,10);                          // Fait un premier lancé de boule random entre 0 et 10
         echo 'Resultat du lancé N° '.$boule.' : '.$premiere_boule.'</br></br>'; // Affiche le nombre de quilles tombées au premier lancé
@@ -18,10 +20,11 @@
         if($premiere_boule == $gg){                            ////// Si le 1er lancé est directement un STRIKE : 
             if($bonus == 2 OR $bonus == 1){$cumul = $cumul+20;}// Si le round précédent était un strike ou un spare, ajoute 20 points
             else if($bonus == 0){$cumul = $cumul + 10;}        // Sinon Rajoute 10 points au score total
-            echo '<h3 style="color:blue">STRIKE ! 10 points ! '.' '.'Score total : '.$cumul.'</h3>'; // Annonce le strike
+            echo '<h3 style="color:blue">STRIKE ! 10 points ! '.' '.'Score total : '.$cumul.'</h3></br>'; // Annonce le strike
             $round = $round+1;                                  // On passe au round suivant 
             $bonus = 2;
             $boule = 1;
+            echo '</div>';
         }
 
 
@@ -44,6 +47,7 @@
                 $round = $round+1;                             // Passage au round suivant
                 $boule = 1;                                    // Le prochain lancé sera donc le 1er lancé du tour suivant
                 $bonus = 1;
+                echo '</div>';
             }
 
 
@@ -57,12 +61,23 @@
                 $round = $round+1;                             // Passage au round suivant
                 $boule = 1;                                    // Le prochain lancé sera donc le 1er lancé du tour suivant
                 $bonus = 0;
+                echo '</div>';
             }
         }
 
     }
 ///// RECOMMENCE JUSQU'AU 10EME ROUND ////////
 
+
+        if($round == 11 AND $bonus == 2){
+            $premiere_boule = rand(0,10);
+            $double = $premiere_boule*2;
+            echo 'Lancé bonus ! Nombre de quilles tombées : '.$premiere_boule.'</br>';
+            $cumul = $cumul+$double;
+            echo $double.' points sont ajoutés à votre score !';
+        }
+
+    echo '</div>';
     // SI FIN DES 10 ROUNDS, ANNONCE DU SCORE TOTAL
-    echo '<h1 style="color:red;font-size:30px;">FIN. Vous avez terminé la partie avec : '.$cumul.' points !</h1>';
+    echo '<h1 id="fin">FIN. Vous avez terminé la partie avec : '.$cumul.' points !</br>TABLEAU DES SCORE VERSION PAPIER CI DESSOUS </h1>';
 ?>

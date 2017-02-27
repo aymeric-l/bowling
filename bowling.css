@@ -1,0 +1,16 @@
+#contenaire{
+	height: 700px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+#round{
+	margin-right: 20px;
+	margin-bottom: 20px;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+#fin{
+	color:red;
+	text-align: center;
+}
