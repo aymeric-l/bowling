@@ -5,7 +5,8 @@
     $gg = 10; // Variable innutile
     $premiere_boule; // Indiquera par la suite le score du lancé actuel
     $bonus = 0;
-        echo '<head><link rel="stylesheet" href="bowling.css"></head>';
+        echo '<head><link rel="stylesheet" href="bowling.css">
+        </head>';
         echo '<div id="contenaire">';
 //////////////  DEBUT DU ROUND /////////////////////////////
     while($round <= 10){                                       ////// Tant que le 10eme round n'est pas terminé : 
@@ -77,6 +78,7 @@
             echo $double.' points sont ajoutés à votre score !';
         }
 
+    
     echo '</div>';
     // SI FIN DES 10 ROUNDS, ANNONCE DU SCORE TOTAL
     echo '<h1 id="fin">FIN. Vous avez terminé la partie avec : '.$cumul.' points !</br>TABLEAU DES SCORE VERSION PAPIER CI DESSOUS </h1>';
